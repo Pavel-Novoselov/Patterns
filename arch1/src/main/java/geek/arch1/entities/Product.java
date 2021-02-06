@@ -1,4 +1,4 @@
-package com.geekbrains.july.market.entities;
+package geek.arch1.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
@@ -22,19 +22,17 @@ public class Product {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "description")
+    private String description;
+
     @Column(name = "price")
     private BigDecimal price;
 
-    @ManyToMany
-    @JoinTable(name = "products_categories",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
-    @JsonBackReference
-    private List<Category> categories;
 
-    public Product(Long id, String title, BigDecimal price) {
+    public Product(Long id, String title, String description, BigDecimal price) {
         this.id = id;
         this.title = title;
+        this.description = description;
         this.price = price;
     }
 }
