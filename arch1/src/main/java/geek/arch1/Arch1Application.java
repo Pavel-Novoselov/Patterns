@@ -26,7 +26,7 @@ public class Arch1Application {
 
 		final ProductMapper productMapper = new ProductMapper();
 
-		final Product product = productMapper.findById(1);
+		Product product = productMapper.findById(1L);
 		System.out.println(product);
 		int insert = productMapper.insert(new Product(5L, "NewProduct", "Super", new BigDecimal(1000.0)));
 		System.out.println("Insert=" + insert);
@@ -34,5 +34,6 @@ public class Arch1Application {
 		System.out.println("Update="+ update);
 		int delete = productMapper.delete(1);
 		System.out.println("Delete="+ delete);
+		product = productMapper.findById(5L);
 	}
 }

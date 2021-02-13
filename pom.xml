@@ -12,7 +12,6 @@
         <module>generating</module>
         <module>structural</module>
         <module>behavioral</module>
-        <module>architect1</module>
         <module>arch1</module>
     </modules>
 
